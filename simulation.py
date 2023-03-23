@@ -118,11 +118,6 @@ def simulate(data, money, threshold, features):
     market_percent_gain = (data[-1][1][-1] - data[0][1][0])/data[0][1][0]
     date_results = sorted(date_results, key=lambda x: x[0])
 
-    #print("END GAIN:",  profit)
-    #print("PERCENT GAIN:", percent_gain)
-    #print("MARKET GAIN", market_percent_gain)
-    #print("^^^^^^^^^^^^^", pred_values)
-
     return {"money_history": money_history, "stock_history": stock_history, "profit_history": profit_history, "pred_values": pred_values, "buy_sell_dates": date_results, "percent_gain": round(percent_gain, 2), "profit": round(profit, 2), "market_gain": round(market_percent_gain, 2), "num_buys": num_buys, "num_sells": num_sells}
 
 
@@ -138,6 +133,3 @@ if __name__ == "__main__":
     threshold = 0.587
     features = 250
     print({"dates": data_1['dates'], "prices": data_1['prices']})
-    #print((simulate({"dates":data_1['dates'], "prices": data_1['prices']}, money_1, threshold, features)))
-    #print((simulate({"dates":data_2['dates'], "prices": data_2['prices']}, money_1, threshold, features)))
-    #print((simulate({"dates":data_3['dates'], "prices": data_3['prices']}, money_1, threshold, features)))
